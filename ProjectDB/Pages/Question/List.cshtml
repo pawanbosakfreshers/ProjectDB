@@ -1,0 +1,62 @@
+﻿@page
+@model ProjectDB.Pages.Question.ListModel
+@{
+}
+<form method="post">
+
+<div class="row">
+    <div class="col-sm-7"><h3>Question</h3></div>
+    <div class="col">
+        <a href="/Question/Add" class="btn btn-success" role="button"><i class="fa fa-add">Add</i></a>
+    </div>
+</div>
+<br/>
+<div>
+    <input type="text" asp-for="@Model.SearchText" class="col-sm-7" />
+    <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button> 
+
+    <i class="fa-li fa fa-check-square"></i>
+        <button asp-page-handler="clear" type="clear" class="btn btn-warning" ><</button>
+</div>
+
+   
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+@*            <th scope="col">Question_Id</th>
+*@            <th scope="col">Questions</th>
+           <th scope="col">CorrectAnswer</th>
+            <th scope="col">Option1</th>
+            <th scope="col">Option2</th>
+            <th scope="col">Option3</th>
+            <th scope="col">Option4</th>
+           
+            <th scope="col">Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in @Model.Questions)
+        {
+            <tr>
+                <td></td>
+          
+                <td>@d.Questions</td>
+                <td>@d.CorrectAnswer</td>
+                <td>@d.Option1</td>
+                 <td>@d.Option2</td>
+                  <td>@d.Option3</td>
+                   <td>@d.Option4</td>
+                 
+                <td>
+                    <a href="/Question/Edit" class="btn btn-warning" role="button">Edit</a>
+                    <a href="/Question/Delete" class="btn btn-danger" role="button">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</form>

@@ -1,0 +1,60 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="post">
+
+
+    @if (HttpContext.User.Identity.IsAuthenticated)
+    {
+
+        <h6 class="display-4" text="center">Hello, @HttpContext.User.Identity.Name</h6>
+        <button type="submit" class="btn btn-danger "><i class="fa fa-sign-out"></i>Logout</button>
+
+
+
+        <div class="row">
+             <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-green db-card">
+                    <div class="card-block">
+                        <h6 class="m-b-20">NoOfStudents</h6>
+                        <h2 class="text-end"><i class="fa fa-person float-start"></i><span>@Model.Dashboard.Student_Id</span></h2>
+                        <p class="m-b-0">Active <span class="float-end"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-blue db-card">
+                    <div class="card-block">
+                        <h6 class="m-b-20">NoOfQuestions</h6>
+                        <h2 class="text-end"><i class="fa fa-building float-start"></i><span>@Model.Dashboard.Questions</span></h2>
+                        <p class="m-b-0">Active <span class="f-right"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-green db-card">
+                    <div class="card-block">
+                        <h6 class="m-b-20">Courses</h6>
+                        <h2 class="text-end"><i class="fa fa-book float-start"></i><span>@Model.Dashboard.Course_id</span></h2>
+                        <p class="m-b-0">Active <span class="float-end"></span></p>
+                    </div>
+                </div>
+            </div>
+           
+           
+
+        </div>
+    }
+    else
+
+    {
+
+
+        <center><h4 class="text-info">WELCOME TO TEST CENTER</h4></center>
+        <h5> Please click here to Proceed &nbsp;&nbsp;<a href="/Students/Login">Login</a></h5>
+    }
+</form>

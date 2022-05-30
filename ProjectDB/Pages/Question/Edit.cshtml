@@ -1,0 +1,43 @@
+﻿@page "{id}"
+@model ProjectDB.Pages.Question.EditModel
+@{
+}
+<h3>Question to edit @Model.Id</h3>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Questions"></label>
+        <input asp-for="@Model.Questions" class="form-control"/>
+    </div>
+    
+        <div class="form-group">
+        <label asp-for="@Model.CorrectAnswer"></label>
+        <input asp-for="@Model.CorrectAnswer" class="form-control"/>
+    </div>
+     <div class="form-group">
+        <label asp-for="@Model.Option1"></label>
+        <input asp-for="@Model.Option1" class="form-control"/>
+    </div>
+      <div class="form-group">
+        <label asp-for="@Model.Option2"></label>
+        <input asp-for="@Model.Option2" class="form-control"/>
+    </div>
+      <div class="form-group">
+        <label asp-for="@Model.Option3"></label>
+        <input asp-for="@Model.Option3" class="form-control"/>
+    </div>
+      <div class="form-group">
+        <label asp-for="@Model.Option4"></label>
+        <input asp-for="@Model.Option4" class="form-control"/>
+  </div>
+     <div class="form-group">
+       <h6 class="text-success">@Model.SuccessMessage</h6>
+       <h6 class="text-danger">@Model.ErrorMessage</h6>
+       <h6 class="text-danger">@Html.ValidationSummary()</h6>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-success">SAVE</button>
+        <a href="/Question/List" class="btn btn-light" role="button">CANCEL</a>
+    </div>
+</form>
+

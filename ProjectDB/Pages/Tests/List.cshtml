@@ -1,0 +1,55 @@
+﻿@page
+@model ProjectDB.Pages.Tests.ListModel
+@{
+}
+<form method="post">
+
+<div class="row">
+    <div class="col-sm-7"><h3>Tests</h3></div>
+    <div class="col">
+        <a href="/Tests/Add" class="btn btn-success" role="button"><i class="fa fa-add">Add</i></a>
+    </div>
+</div>
+<br/>
+<div>
+    <input type="text" asp-for="@Model.SearchText" class="col-sm-7" />
+    <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button> 
+
+    <i class="fa-li fa fa-check-square"></i>
+        <button asp-page-handler="clear" type="clear" class="btn btn-warning"><</button>
+</div>
+
+   
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <tr>
+                <td> Q.1</td>
+                    <td> &nbsp; </td>
+                <td>
+                    @Model.Tests    
+                </td>
+            </tr>
+            <tr>
+                <td></td> <td></td> <td></td> <td></td> 
+            </tr>
+
+        </tr>
+    </thead>
+    <tbody>
+       
+            <tr>
+                
+                <td>
+                    <a href="/Tests/Edit" class="btn btn-warning" role="button">Edit</a>
+                    <a href="/Tests/Delete" class="btn btn-danger" role="button">Delete</a>
+                </td>
+            </tr>
+       
+
+    </tbody>
+</table>
+</form>

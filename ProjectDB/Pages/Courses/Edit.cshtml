@@ -1,0 +1,22 @@
+﻿@page "{id}"
+@model ProjectDB.Pages.Courses.EditModel
+@{
+}
+<h3>Course to edit @Model.Id</h3>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Course_Name"></label>
+        <input asp-for="@Model.Course_Name" class="form-control"/>
+    </div>
+  
+     <div class="form-group">
+       <h6 class="text-success">@Model.SuccessMessage</h6>
+       <h6 class="text-danger">@Model.ErrorMessage</h6>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-success">SAVE</button>
+        <a href="/Courses/List" class="btn btn-light" role="button">CANCEL</a>
+    </div>
+</form>
+

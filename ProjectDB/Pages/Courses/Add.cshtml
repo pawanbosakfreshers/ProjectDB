@@ -1,0 +1,22 @@
+﻿@page
+@model ProjectDB.Pages.Course.AddModel
+@{
+}
+<h3>Add New Course</h3>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Course_Name"></label>
+        <input asp-for="@Model.Course_Name" class="form-control" />
+    </div>
+  
+    <div class="form-group">
+        <h6 class="text-success">@Model.SuccessMessage</h6>
+        <h6 class="text-danger">@Model.ErrorMessage</h6>
+           <h6 class="text-danger">@Html.ValidationSummary()</h6>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="/Course/List" class="btn btn-light" role="button">Cancel</a>
+    </div>
+</form>
